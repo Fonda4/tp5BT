@@ -16,7 +16,7 @@ def receive_data():
 # Exemple de boucle principale
 while True:
     # Envoi de données à l'autre HC-05
-    send_data('Hello from Pico!\n')
+    send_data("Hello from Pico!")
     
     # Réception de données de l'autre HC-05
     incoming_data = receive_data()
