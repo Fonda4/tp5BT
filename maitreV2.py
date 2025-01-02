@@ -46,11 +46,13 @@ while True:
     elif button.value() and bpressed == 1:
         bpressed = 0
         send_data("STOP")
+        mess1 = "STOP"
+        display_message_ligne1(mess1)
     # Réception des données de l'esclave
     incoming_data = receive_data()
     if incoming_data:
         print("Reçu :", incoming_data)
-        display_message_ligne2(, incoming_data)  # Affiche la réponse sur l'écran OLED
+        display_message_ligne2(mess1, incoming_data)  # Affiche la réponse sur l'écran OLED
 
     # Pause pour éviter une surcharge
     time.sleep(0.5)
