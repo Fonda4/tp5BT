@@ -47,7 +47,7 @@ class BluetoothHC05:
             self.set_rgb_color(1, 0, 0)
             self.control_motor(1)
             # print("LED turned ON")
-            await self.send_data("LED RED et MOTEUR ON")
+            await self.send_data("LED RED ET MOTEUR ON")
             print("LED turned ON")
         elif command == "STOP":
             # Éteint la LED et arrête le moteur
@@ -63,7 +63,7 @@ class BluetoothHC05:
             data =  await self.receive_data()
             if data:
                 print(" process command ", data)
-                self.process_command(data)
+                await self.process_command(data)
 
 # Exemple d'utilisation de la classe avec asyncio
 async def main():
