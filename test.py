@@ -1,27 +1,19 @@
-from machine import UART
-import time
+"""
+import uasyncio as asyncio
+async def task_function(name):
+    while True:
+        print('Task', name, 'is running')
+        await asyncio.sleep(1)
 
-# Configuration de l'UART sur le GPIO 0 (RX) et GPIO 1 (TX) pour le Pico
-uart = UART(0, baudrate=38400)
+async def main():
+    # Planifier l'exécution des tâches
+    task1 = asyncio.create_task(task_function('A'))
+    task2 = asyncio.create_task(task_function('B'))
 
-# Fonction pour envoyer des données
-def send_data(data):
-    uart.write(data)
+# Attendre la complétion des tâches (ici elles bouclent indéfiniment)
+    await task1
+    await task2
 
-# Fonction pour recevoir des données
-def receive_data():
-    if uart.any():
-        return uart.readline()
-
-# Exemple de boucle principale
-while True:
-    # Envoi de données à l'autre HC-05
-    send_data("Hello from Pico!")
-    
-    # Réception de données de l'autre HC-05
-    incoming_data = receive_data()
-    if incoming_data:
-        print('Received:', incoming_data)
-    
-    # Pause pour éviter la saturation du buffer
-    time.sleep(1)
+# Démarrer la boucle d'événements
+asyncio.run(main())
+"""
