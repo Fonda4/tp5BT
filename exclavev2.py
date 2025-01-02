@@ -8,6 +8,7 @@ uart = UART(0, baudrate=38400)
 led_red = Pin(11, Pin.OUT)
 led_green = Pin(12, Pin.OUT)
 led_blue = Pin(13, Pin.OUT)
+
 motor = Pin(14, Pin.OUT)
 
 # Fonction pour envoyer des données
@@ -17,7 +18,10 @@ def send_data(data):
 # Fonction pour recevoir des données
 def receive_data():
     if uart.any():
-        return uart.readline().decode('utf-8').strip()  # Décodage et suppression des espaces inutiles
+        data = uart.read()
+        print(len(data), data)
+        return data.decode('utf-8').strip()
+    #    return uart.readline().decode('utf-8').strip()  # Décodage et suppression des espaces inutiles
 
 # Fonction pour contrôler la LED RGB
 def set_rgb_color(r, g, b):
@@ -29,6 +33,9 @@ def set_rgb_color(r, g, b):
 def control_motor(state):
     motor.value(state)
 
+
+NbPress = 0
+
 # Boucle principale
 while True:
     # Réception des données Bluetooth
@@ -39,14 +46,25 @@ while True:
         # Analyse des commandes reçues
         if incoming_data == "BUTTON_PRESSED":
             # Allume la LED en rouge et démarre le moteur
+            NbPress = NbPress + 1
+            """
+            if NbPress == 1 :
+                set_rgb_color(0, 1, 1) 
+            elif NbPress == 2 :
+                set_rgb_color(1, 1, 0)
+            else  :
+                set_rgb_color(1, 0, 1)
+            """
             set_rgb_color(1, 0, 0)
             control_motor(1)
             send_data("LED ROUGE ET MOTEUR ON")
+            if NbPress > 3:
+                NbPress = 0
         elif incoming_data == "STOP":
             # Éteint la LED et arrête le moteur
             set_rgb_color(0, 0, 0)
             control_motor(0)
-            send_data("LED OFF ET MOTEUR OFF")
+            send_data("LED OFF \r MOTEUR OFF")
         else:
             send_data("COMMANDE INCONNUE")
 
