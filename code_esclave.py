@@ -11,7 +11,9 @@ def send_data(data):
 # Fonction pour recevoir des données
 def receive_data():
     if uart.any():
-        return uart.readline()
+        data = uart.read()
+        print(len(data), data)
+        return data
 
 # Exemple de boucle principale
 while True:
