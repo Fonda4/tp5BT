@@ -40,7 +40,7 @@ class BluetoothHC05:
                 """
             await asyncio.sleep(0)
 
-    def process_command(self, command):
+    async def process_command(self, command):
         print(command)
         if command == "BUTTON_PRESSED":
             # Allume la LED en rouge et démarre le moteur
