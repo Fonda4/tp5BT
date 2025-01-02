@@ -1,13 +1,16 @@
 import uasyncio as asyncio
 from machine import UART, Pin
+from dcmotor import DCMotor
 
 class BluetoothHC05:
-    def __init__(self, tx_pin, rx_pin, led_pin_R,led_pin_G,led_pin_B, motor_pin, baudrate_=38400):
+    def __init__(self, tx_pin, rx_pin, led_pin_R,led_pin_G,led_pin_B, motor_pin_1,motor_pin_2, baudrate_=38400):
         self.uart = UART(0, baudrate=baudrate_) #, tx=tx_pin, rx=rx_pin)
         self.led_R = Pin(led_pin_R, Pin.OUT)
         self.led_G = Pin(led_pin_G, Pin.OUT)
         self.led_B = Pin(led_pin_B, Pin.OUT)
-        self.motor = Pin(motor_pin, Pin.OUT)
+        self.motor_1 = Pin(motor_pin_1, Pin.OUT)
+        self.motor_2 = Pin(motor_pin_2, Pin.OUT)
+
         print("UART lancé")
 
     def set_rgb_color(self,r, g, b):
