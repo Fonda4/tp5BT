@@ -7,6 +7,7 @@ uart = UART(0, baudrate=38400)
 # Fonction pour envoyer des données
 def send_data(data):
     uart.write(data)
+    print(len(data),data)
 
 # Fonction pour recevoir des données
 def receive_data():
