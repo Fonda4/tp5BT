@@ -51,7 +51,7 @@ while True:
     # Réception des données de l'esclave
     incoming_data = receive_data()
     if incoming_data:
-        print("Reçu :", incoming_data)
+        print("Recu :", incoming_data)
         display_message_ligne2(mess1, incoming_data)  # Affiche la réponse sur l'écran OLED
 
     # Pause pour éviter une surcharge
