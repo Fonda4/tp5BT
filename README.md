@@ -88,6 +88,45 @@ Ducros, Christian. Les 3 raisons de la programmation asynchrone. [Vidéo en lign
 '''
 https://www.youtube.com/watch?v=GzPktikU_PI
 '''
+Ducros, Christian. Programmation asynchrone partie 1/4 module uasyncio. [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
+'''
+https://www.youtube.com/watch?v=xe_OZ6WnSY4
+'''
+Ducros, Christian. Programmation asynchrone partie 2/4 module uasyncio. [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
+'''
+https://www.youtube.com/watch?v=xe_OZ6WnSY4
+'''
+
+Ducros, Christian. Programmation asynchrone partie 3/4 module uasyncio. [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
+'''
+https://www.youtube.com/watch?v=UptaQVDQeRg
+'''
+
+Ducros, Christian. Programmation asynchrone partie 4/4 module uasyncio. [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
+'''
+https://www.youtube.com/watch?v=DCvGdwg1Iiw
+'''
+
+christianDUCROS. GitHub - christianDUCROS/uasyncio : exemples. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
+'''
+https://github.com/christianDUCROS/uasyncio
+'''
+
+Instructables Workshop. Understanding the basics of electricity. [PDF en ligne]. Disponible sur : (consulté le 6 janvier 2025).
+'''
+https://content.instructables.com/F8O/SMME/IU5NM2JJ/F8OSMMEIU5NM2JJ.pdf
+'''
+
+Compuphase. Termite. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
+'''
+https://www.compuphase.com/software_termite.htm
+'''
+
+
+
+
+
+
 
 
 
