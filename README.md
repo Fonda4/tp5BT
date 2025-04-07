@@ -46,9 +46,8 @@ Binôme (B1)
 
 <summary class="sum2">Mode manuel :</summary>
 
-<div class="heatMap">
-
     - Contrôle à distance via une télécommande.
+    
 </div>
 </details>
 
