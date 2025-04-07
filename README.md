@@ -43,11 +43,13 @@ Binôme (B1)
 
 <details>
 <summary>2. Utilisation</summary>
-
+sqdqs
 <summary class="sum2">Mode manuel :</summary>
 
+<div class="heatMap">
+
     - Contrôle à distance via une télécommande.
-    
+
 </div>
 </details>
 
