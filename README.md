@@ -15,7 +15,7 @@ Binôme (B1)
 <!---------------------------------------------------------->
 
 <details>
-<summary>0. Objectif du projet</summary>
+<summary>*0. Objectif du projet*</summary>
 
 - Concevoir, construire et programmer un robot mobile radiocommandé.
 - Le robot devra effectuer des mouvements, éviter des obstacles et exécuter des tâches simples.
@@ -28,7 +28,7 @@ Binôme (B1)
 <!---------------------------------------------------------->
 
 <details>
-<summary>1. Cadre du projet</summary>
+<summary>*1. Cadre du projet*</summary>
 
 - Réalisé par des étudiants durant le deuxième quadrimestre.
 - Travail en classe (séances présentielles) et à domicile.
@@ -45,7 +45,7 @@ Binôme (B1)
 <!---------------------------------------------------------->
 
 <details>
-<summary>2. Utilisation</summary>
+<summary>*2. Modes de fonctionnement du robot*</summary>
 
 - Mode manuel
     - Contrôle à distance via une télécommande.
@@ -59,13 +59,11 @@ Binôme (B1)
 <!---------------------------------------------------------->
 
 <details>
-<summary>3. Test</summary>
+<summary>3. inalité pédagogique</summary>
 
-*vvfrgev*
-
-
-
-** **
+- Exploration des principes de télécommande et d’automatisation.
+- Compréhension approfondie des concepts de robotique et d’intelligence embarquée.
+- Définition des spécifications et fonctionnalités en fonction des deux modes de fonctionnement.
 
 </details>
 
@@ -75,7 +73,7 @@ Binôme (B1)
 
 
 <details>
-<summary>4. Controles</summary>
+<summary>4. Sources</summary>
 
 
 ** **
