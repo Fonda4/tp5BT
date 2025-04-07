@@ -1,4 +1,7 @@
 # A2071 - Robotique (Part 1) - 2024-2025
+
+** **
+
 ## Projet: Mini Robot Télécommandé
 
 Binôme (B1)
@@ -43,6 +46,7 @@ Binôme (B1)
 
 <details>
 <summary>2. Utilisation</summary>
+
 - Mode manuel
     - Contrôle à distance via une télécommande.
 
