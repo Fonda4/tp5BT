@@ -76,15 +76,18 @@ Binôme (B1)
 <summary>4. Sources</summary>
 
 
-test
-```
-youtube.com
-```
-test
-```
-youtube.com
-```
-
+SparkFun Electronics. HC-SR04 Ultrasonic Sensor Datasheet. Auteur inconnu. [PDF en ligne]. Disponible sur : (consulté le 6 janvier 2025).
+'''
+https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf
+'''
+Wikipédia. Ultrason. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
+'''
+https://fr.wikipedia.org/wiki/Ultrason
+'''
+Ducros, Christian. Les 3 raisons de la programmation asynchrone. [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
+'''
+https://www.youtube.com/watch?v=GzPktikU_PI
+'''
 
 
 
