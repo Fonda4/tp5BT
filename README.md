@@ -8,7 +8,7 @@ Binôme (B1)
 - Foyet Fondjo David HE305102
 
 ### Objectifs:
-<!--- PRESENTATION------------------------------------------>
+<!---0------------------------------------------------------>
 <!---------------------------------------------------------->
 
 <details>
@@ -21,53 +21,36 @@ Binôme (B1)
 </details>
 
 
-<!--- DEPLOIEMENT------------------------------------------->
+<!--------------1------------------------------------------->
 <!---------------------------------------------------------->
 
 <details>
-<summary>1. Deploiement</summary>
+<summary>1. Cadre du projet</summary>
 
-Le déploiement s'effectue à l'aide de 3 fichiers SQL.  
-<div class="heatMap">
-
-|Description|Sript sql|
-|--|--|
-|Création de la DB et des schémas|[Deploy\Create_DB_DIAG.sql](./Deploy/Create_DB_DIAG.sql)|
-|Procédures de base|[Deploy\Deploy.sql](./Deploy/Deploy.sql)|
-|Procédures complétmentaires|[Deploy\Deploy_supp.sql](./Deploy/Deploy_supp.sql)|
-</div>
-Chacun des fichiers doit être ouvert dans SSMS, puis Executé.  
-
-****  
-
-**Deploy.sql** 
-
-il faut personnaliser  : 	**@ROOT**
-
-**Deploy_supp.sql**
-
-il faut personnaliser  : **@DB_ORBIS**
-
-** **
+- Réalisé par des étudiants durant le deuxième quadrimestre.
+- Travail en classe (séances présentielles) et à domicile.
+- Acquisition de compétences en :
+  - Conception mécanique
+  - Électronique
+  - Programmation
+  - Automatisation
 
 </details>
 
 
-<!--- UTILISATION------------------------------------------->
+<!---2------------------------------------------------------>
 <!---------------------------------------------------------->
 
 <details>
 <summary>2. Utilisation</summary>
 
-```
-eeeee
-```
+<summary class="sum2">Mode manuel :</summary>
 
-    eeee
+<div class="heatMap">
 
-ssss
- 
-** **
+    - Contrôle à distance via une télécommande.
+</div>
+</details>
 
 </details>
 
