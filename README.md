@@ -59,7 +59,7 @@ Binôme (B1)
 <!---------------------------------------------------------->
 
 <details>
-<summary>3. inalité pédagogique</summary>
+<summary>3. Finalité pédagogique</summary>
 
 - Exploration des principes de télécommande et d’automatisation.
 - Compréhension approfondie des concepts de robotique et d’intelligence embarquée.
@@ -73,7 +73,7 @@ Binôme (B1)
 
 
 <details>
-<summary>4. Sources</summary>
+<summary>4. *Sources*</summary>
 
 
 ** **
