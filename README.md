@@ -1,65 +1,13 @@
-<style>
-    .Droite {
-        text-align: right;
-    }
-    .heatMap {
-        width: 100%;
-    }
-    .heatMap th {
-        background: #cfd8dc;
-        word-wrap: break-word;
-        text-align: center;
-    }
-    .heatMap tr:nth-child(1) { background: #e1f5fe ; }
-    .heatMap tr:nth-child(2) { background: #b3e5fc ; }
-    .heatMap tr:nth-child(3) { background: #e1f5fe ; }
-    .heatMap tr:nth-child(4) { background: #b3e5fc ; }
-    .heatMap tr:nth-child(5) { background: #e1f5fe ; }
-    .heatMap tr:nth-child(6) { background: #b3e5fc ; }
-	.heatMap tr:nth-child(7) { background: #e1f5fe ; }
-    .heatMap tr:nth-child(8) { background: #b3e5fc ; }
-    .heatMap tr:nth-child(9) { background: #e1f5fe ; }
-    .heatMap tr:nth-child(10) { background: #b3e5fc ; }
-    .heatMap tr:nth-child(11) { background: #e1f5fe ; }
-    .heatMap tr:nth-child(12) { background: #b3e5fc ; }
+# A2071 - Robotique (Part 1) - 2024-2025
+## Projet: Mini Robot Télécommandé
 
-    .ex1 {
-    margin: auto;
-    background: gold;
-    width: 66%;
-    }
-    .ex2 {
-            margin: 0px 0px 0px 20px;
-    }
+Binôme (B1)
+- Xu Keng HE305064
+- Fondimare Nathan HE304827
+- de Meeus Justin HE304831
+- Foyet Fondjo David HE305102
 
-    details {  
-        
-        border:5px solid #ffffff;
-        background: #ffffff;
-        color: #000000;
-    }
-
-    summary {
-        font-size: 24px;
-        font-weight: bold;
-    
-    }
-
-    .sum1 {
-        font-size: 20px;
-        font-weight: bold;
-    }    
-
-    .sum2 {
-        font-size: 16px;
-        font-weight: normal;
-    
-    }
-</style> 
-
-
-
-
+### Objectif:
 <!--- PRESENTATION------------------------------------------>
 <!---------------------------------------------------------->
 
