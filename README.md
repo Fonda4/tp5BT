@@ -175,9 +175,40 @@ Santos, S., & Santos, S. (2023, 5 juillet). MicroPython : OLED Display with ESP3
 ```
 https://randomnerdtutorials.com/micropython-oled-display-esp32-esp8266/
 ```
+Das, A. (2024, 24 mai). Raspberry Pi Pico Interrupts Tutorial- Examples in MicroPython. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
+```
+https://electrocredible.com/raspberry-pi-pico-external-interrupts-button-microp ython/
+```
 
-
-
+Voici vos références reformatées de façon plus lisible :
+Moteurs électriques pour la robotique. (2025, 6 janvier). [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
+```
+https://www.dunod.com/sciences-techniques/moteurs-electriques-pour-robotique-0
+```
+Texas Instruments. (s.d.). L293. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
+```
+https://www.ti.com/lit/ds/symlink/l293.pdf
+```
+Pont-H L293D — MCHobby - Wiki. (s.d.). [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
+```
+https://wiki.mchobby.be/index.php?title=Pont-H_L293D
+```
+STMicroelectronics. (s.d.). L298. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
+```
+https://www.mouser.be/datasheet/2/389/l298-1849437.pdf
+```
+Pont-H L298N — MCHobby - Wiki. (s.d.). [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
+```
+https://wiki.mchobby.be/index.php?title=Pont-H_L298N
+```
+Eskimon. (s.d.). Un moteur qui a de la tête : le Servomoteur - Arduino : premiers pas en informatique embarquée. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
+```
+https://zestedesavoir.com/tutoriels/686/arduino-premiers-pas-en-informatique-embarquee/747_le-mouvement-grace-aux-moteurs/3438_un-moteur-qui-a-de-la-tete-le-servomoteur/
+```
+PICO Servo Driver - MakerFabs Wiki. (s.d.). [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
+```
+https://wiki.makerfabs.com/PICO_Servo_Driver.html
+```
 
 
 
