@@ -7,19 +7,15 @@ Binôme (B1)
 - de Meeus Justin HE304831
 - Foyet Fondjo David HE305102
 
-### Objectif:
+### Objectifs:
 <!--- PRESENTATION------------------------------------------>
 <!---------------------------------------------------------->
 
 <details>
-<summary>0. Présentation</summary>
+<summary>0. Objectif du projet</summary>
 
-Pour répondre à différents besoins liés à ORBIS et toutes les données enregsitrées dans sa DB,
-nous avons conçu une DB de Diagnostic.
-Elle contient différentes ... tables, procédures stockées et fonctions .. rangées dans plusieurs schémas.
-
-Pour accéder à la DB d'ORBIS, une procdure permet de disposer de synonymes ayant les mêmes noms que les tables d'ORBIS ... les données sont accessibles comme si nous étions dans la DB d'ORBIS.
- 
+- Concevoir, construire et programmer un robot mobile radiocommandé.
+- Le robot devra effectuer des mouvements, éviter des obstacles et exécuter des tâches simples.
 
 
 <details>
