@@ -23,6 +23,15 @@
     .heatMap tr:nth-child(11) { background: #e1f5fe ; }
     .heatMap tr:nth-child(12) { background: #b3e5fc ; }
 
+    .ex1 {
+    margin: auto;
+    background: gold;
+    width: 66%;
+    }
+    .ex2 {
+            margin: 0px 0px 0px 20px;
+    }
+
     details {  
         
         border:5px solid #ffffff;
@@ -33,51 +42,391 @@
     summary {
         font-size: 24px;
         font-weight: bold;
+    
     }
 
-    .Yellow {
-        background: yellow;
+    .sum1 {
+        font-size: 20px;
+        font-weight: bold;
+    }    
+
+    .sum2 {
+        font-size: 16px;
+        font-weight: normal;
+    
     }
 </style> 
+
+
+
 
 <!--- PRESENTATION------------------------------------------>
 <!---------------------------------------------------------->
 
 <details>
 <summary>0. Présentation</summary>
-La synchronisation de l'Arrimage consiste à échanger des données entre 2 DBs d'ORBIS 
 
-**DB1 :	RNPP**
+Pour répondre à différents besoins liés à ORBIS et toutes les données enregsitrées dans sa DB,
+nous avons conçu une DB de Diagnostic.
+Elle contient différentes ... tables, procédures stockées et fonctions .. rangées dans plusieurs schémas.
 
-Cette DB contient :
+Pour accéder à la DB d'ORBIS, une procdure permet de disposer de synonymes ayant les mêmes noms que les tables d'ORBIS ... les données sont accessibles comme si nous étions dans la DB d'ORBIS.
+ 
 
-<div class="heatMap">
 
-|Id|Structure|
-|:--:|:--|
-|103|Personne|
-|107|Carte nationale d'identité|
-|617|CR|
-|743|CR CEDEAO|
-|807|CREF|
-</div>
-
-**DB2 :	Arrimage**
-
-Cette DB contient :
+<details>
+<summary class="sum2">DB_DIAG contient les schémas suivants :</summary>
 
 <div class="heatMap">
 
-|Id|Structure|
-|:--:|:--|
-|106|Toutes les cartes|
-|107|Personne|
-|108|Demande de modification du numéro de téléphone|
-|109|Demande de modification du numéro de passeport|
-|110|Demande de modification du permis de conduire|
+|Nom|Description|
+|:--|:--|
+|_Backup||
+|_Data||
+|_Extract||
+|_Genkey||
+|_HistoConfig||
+|_ORBIS||
+|_Root||
+|_Schema||
+|_TComp||
+|_WebAPI||
+|Docu||
 </div>
+</details>
 
-L'échange se fait dans les 2 sens 
+
+<!--- ROOT------------------------------------------>
+<details  class="ex2" >
+<summary  class="sum1"><i>Root</i></summary>
+<details class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|Backup_files||
+|Configuration||
+|Event||
+|EventLog||
+|TBL_COLUMNS||
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|sp_CreateCsvFileFromQuery||
+|sp_CreateDirectory||
+|sp_DeleteFile||
+|sp_ExtractRoutines||
+|sp_ReadFile||
+|sp_ReadFileU||
+|sp_SaveBlob||
+|sp_SaveFile||
+|sp_SaveFileU||
+|sp_ShowJson||
+|sp_ShowJson_UTF8||
+|...||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|fn_ConversionChaineEtendue||
+|fn_ConversionChaineHTML||
+|fn_ConvertBase64ToBin||
+|fn_ConvertBinToBase64||
+|fn_HashCode||
+|fn_UTF8ToNvarchar||
+|fn_NVARCHARtoUTF8||
+|LPAD||
+|RPAD||
+|...||
+
+</div>
+</details>
+
+</details>
+<!--- FIN ROOT------------------------------------------>
+
+
+<!--- ORBIS------------------------------------------>
+<details  class="ex2" >
+<summary  class="sum1"><i>ORBIS</i></summary>
+
+<details class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|DICO_OPERATION||
+|Tempo_BIO||
+|Tempo_HTML||
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|sp_CreationVueAlphas||
+|sp_CreationVueFace||
+|...||
+
+</div>
+</details>
+
+</details>
+ <!--- FIN ORBIS------------------------------------------>
+
+
+<!--- BACKUP------------------------------------------>
+<details  class="ex2" >
+<summary  class="sum1"><i>BACKUP</i></summary>
+
+<details class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|BACKUP_FILES||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|sp_Backup||
+|sp_PurgeAllBackupFiles||
+|sp_PurgeBackupFiles||
+|sp_Restore||
+
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+</details>
+ <!--- FIN BACKUP------------------------------------------>
+
+
+
+<!--- CONN------------------------------------------>
+<details  class="ex2" >
+<summary  class="sum1"><i>CONN</i></summary>
+
+<details class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|sp_CreateSynonymsForTargetDatabase||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+</details>
+ <!--- FIN CONN------------------------------------------>
+
+
+<!--- HTTP------------------------------------------>
+<details  class="ex2" >
+<summary  class="sum1"><i>HTTP</i></summary>
+
+<details class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|Execution||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|sp_ExecuteHTTPAuthExt||
+|sp_ExecuteHTTPAuthExt_Bin||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+</details>
+ <!--- FIN HTTP------------------------------------------>
+
+
+
+<!--- WEBAPI------------------------------------------>
+<details  class="ex2" >
+<summary  class="sum1"><i>WEBAPI</i></summary>
+
+<details class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|WebAPI||
+|.||
+|.||
+|.||
+|.||
+|.||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+</details>
+ <!--- FIN WEBAPI------------------------------------------>
+
+
+
+<!--- HistoConfig------------------------------------------>
+<details  class="ex2" >
+<summary  class="sum1"><i>HistoConfig</i></summary>
+
+<details class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+</details>
+ <!--- FIN HistoConfig------------------------------------------>
+
+<!--- AUTRES------------------------------------------>
+<details  class="ex2" >
+<summary  class="sum1"><i>AUTRES</i></summary>
+
+<details class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+<details class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+</details>
+ <!--- FIN AUTRES------------------------------------------>
 
 </details>
 
@@ -88,72 +437,28 @@ L'échange se fait dans les 2 sens
 <details>
 <summary>1. Deploiement</summary>
 
-
-**Sur Serveur2 / ArrimageProd**
-
-
-+ Il faut executer :	
+Le déploiement s'effectue à l'aide de 3 fichiers SQL.  
 <div class="heatMap">
 
 |Description|Sript sql|
 |--|--|
-|Mise à jour du schéma|[_0_UpdateSchemas.sql](./_0_UpdateSchemas.sql)|
-|Drop keys|[Drop_FK_Arrimage.sql](./Drop_FK_Arrimage.sql)|
-| |[_2_PROC_ARRIM_PrepareEnvoi_Tables_ARRIM.sql](./_2_PROC_ARRIM_PrepareEnvoi_Tables_ARRIM.sql)|
-| |[_2_PROC_ARRIM_RecupImport_Tables_RNPP.sql](./_2_PROC_ARRIM_RecupImport_Tables_RNPP)|
-| |[_2_PROC_ARRIM_Nettoyage_Tables_ARRIM.sql](./_2_PROC_ARRIM_Nettoyage_Tables_ARRIM.sql)|
-
+|Création de la DB et des schémas|[Deploy\Create_DB_DIAG.sql](./Deploy/Create_DB_DIAG.sql)|
+|Procédures de base|[Deploy\Deploy.sql](./Deploy/Deploy.sql)|
+|Procédures complétmentaires|[Deploy\Deploy_supp.sql](./Deploy/Deploy_supp.sql)|
 </div>
-Chacun des fichiers doit être ouvert dans SSMS, puis Executé.      
+Chacun des fichiers doit être ouvert dans SSMS, puis Executé.  
 
-Dans chaque fichier SQL, il faut modifier le nom de la base Cible   
-    -   ArimageTest -> ???  
-    -   rnppbt-v3 -> ???
+****  
 
-****
+**Deploy.sql** 
 
-**Sur Serveur1 / RNPP**
+il faut personnaliser  : 	**@ROOT**
 
-+ Il faut executer :	
-<div class="heatMap">
+**Deploy_supp.sql**
 
-|Description|Sript sql|
-|--|--|
-|Mise à jour du schéma|[_0_UpdateSchemas.sql](./_0_UpdateSchemas.sql)|
-||[_1_CreateLink.sql](./_1_CreateLink.sql)|
-| |[_2_PROC_RNPP_RecupImport_Tables_ARRIM.sql](./_2_PROC_RNPP_RecupImport_Tables_ARRIM.sql)|
-| |[_2_PROC_RNPP_PrepareEnvoi_Tables_RNPP.sql](./_2_PROC_RNPP_PrepareEnvoi_Tables_RNPP.sql)|
-| |[_2_PROC_RNPP_Execution.sql](./_2_PROC_RNPP_Execution.sql)|
+il faut personnaliser  : **@DB_ORBIS**
 
-</div>
-Chacun des fichiers doit être ouvert dans SSMS, puis Executé.
-
-Dans chaque fichier SQL, il faut modifier le nom de la base Cible   
-    -   ArimageTest -> ???  
-    -   rnppbt-v3 -> ???
-
-****
-
-**_1_CreateLink.sql** ... link vers le Serveur ArrimageTest
-
-il faut personnaliser  : 	@ServerName, @User, @Password
-
-**_2_PROC_RNPP_Execution**
-
-Cette procédure permet d'exécuter le processus complet ... à partir de RNPP
-||Liste des procédures appelées|
-|--|--|
-||Link.ArrimageProd.ARRIM.ARRIM_PrepareEnvoi_Tables_ARRIM|
-||ARRIM.RNPP_RecupImport_Tables_ARRIM|
-||Link.ArrimageProd.ARRIM.ARRIM_Nettoyage_Tables_ARRIM|
-||ARRIM.RNPP_PrepareEnvoi_Tables_RNPP|
-||Link.ArrimageProd.ARRIM.ARRIM_RecupImport_Tables_RNPP|
-		
-il faut personnaliser  : **Link.ArrimageProd**
-
-+ Il faut créer un JOB SQL ... pour exécuter la procédure **ARRIM.RNPP_Execution** ! .. une fois par Jour.
-
-
+** **
 
 </details>
 
@@ -164,31 +469,15 @@ il faut personnaliser  : **Link.ArrimageProd**
 <details>
 <summary>2. Utilisation</summary>
 
-Pour effectuer le transfert des données d'arrimage,
+```
+eeeee
+```
 
-il faut exécuter, dans la base RNPP,  la commande SQL : 
+    eeee
 
-**Récupération des données d'arrimage uniquement**
-
-        declare	@Full		int = 0
-        declare @Histo		int = 0
-	    execute  ARRIM.RNPP_Execution @Full,  @histo
-
-**Premier lancement pour envoyer les personnes et les cartes vers l'ARRIMAGE**
-        
-        declare	@Full		int = 1
-        declare @Histo		int = 0
-	    execute  ARRIM.RNPP_Execution @Full,  @histo
-
-**Execution complète**
-        
-        declare	@Full		int = 1
-        declare @Histo		int = 1
-	    execute  ARRIM.RNPP_Execution @Full,  @histo
-
-voir fichier **LancerExecution.sql**
-
-
+ssss
+ 
+** **
 
 </details>
 
@@ -196,66 +485,32 @@ voir fichier **LancerExecution.sql**
 <!---------------------------------------------------------->
 
 <details>
-<summary>3. Tests et contrôles</summary>
+<summary>3. Test</summary>
 
-
-*Pour les tests, nous avons besoin d'installer préalablement DB_DIAG*
-
-**Pour tester le transfert des demandes de modifications de l'Arrimage vers RNPP**
-
--   Il faut alimenter des données d'arrimage dans les strcuture 108, 109 et 110  
-en utilisant la Web API. **http://arm-orbisbt.intra.rnpp-ci.org:8091**
-
-    il faut utiliser le fichier [Insertion_Arimage_Test.sql](./Insertion_Arimage_Test.sql)  
-Ce script permettra d'insérer des demandes dans les 3 structures.
-
-- Il faut exécuter le transfert des données d'arrimage  
-    le mode Full = 1 n'est pas nécessaire !
-
-- il faut vérfier que les données d'ArrimageTest
-    -   sont transférées dans RNPP
-    -   sont historiséés dans ArrimageTest
-    -   sont supprimées dans ArrimageTest
-    
-il faut utiliser le fichier [ControleDesDemandesTransferees.sql](./ControleDesDemandesTransferees.sql)
+*vvfrgev*
 
 
 
-
-**Pour tester le transfert des données de RNPP vers Arrimage**  
-
-- Lors de l'exécution,  
-   il faut activer Full = 1  et Histo = 1
-
-
-<div class="Yellow">
-
-- Il faut modifier des dossiers dans RNPP 
-    -   en activant un dossier  à Actif = 0         **-> Ajouter**  
-    -   en modifiant un des 7 champs alphas transférés  
-            DD_122  
-            DD_123 ou DD_305  en fonction de DD_1286  
-            DD_1286  
-            DD_124  
-            DD_127  
-            DD_872  
-            FK_908                                  **-> Modifier**  
-    -   en désactivant un dossier  à Actif = 1      **-> Supprimer**
-
-    il faut utiliser le fichier [XXX.sql](./XXXX.sql)
-
-- Il faut exécuter le transfert des données d'arrimage  
-
-- il faut vérfier que les données de RNPP 
-    -   sont transférées dans ArrimageTest
-    -   sont historiséés dans ArrimageTest  
-        -   **Ajouter**       actif = 1		Date_Update = @DateUpdate		Desactivation = 0
-        -   **Modifier**      actif = 1		Date_Update = @DateUpdate		Desactivation = 1
-        -   **Supprimer**     actif = 0		Date_Update = @DateUpdate		Desactivation = 1
-        
-    il faut utiliser le fichier [XXX.sql](./XXXX.sql)
-    
-</div>
+** **
 
 </details>
+
+
+<!--- CONTROLES--------------------------------------------->
+<!---------------------------------------------------------->
+
+
+<details>
+<summary>4. Controles</summary>
+
+
+** **
+
+</details>
+
+<!---------------------------------------------------------->
+
+
+
+
 
