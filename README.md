@@ -1,7 +1,6 @@
 # A2071 - Robotique (Part 1) - 2024-2025
 
 
-
 ## *Projet: Mini Robot Télécommandé*
 
 Binôme (B1)
@@ -214,13 +213,13 @@ https://wiki.makerfabs.com/PICO_Servo_Driver.html
 
 
 
-** **
+
 
 </details>
 
 <!---------------------------------------------------------->
 
 
-
+** **
 
 
