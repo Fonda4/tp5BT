@@ -1,8 +1,8 @@
 # A2071 - Robotique (Part 1) - 2024-2025
 
-** **
 
-## Projet: Mini Robot Télécommandé
+
+## *Projet: Mini Robot Télécommandé*
 
 Binôme (B1)
 - Xu Keng HE305064
@@ -28,7 +28,7 @@ Binôme (B1)
 <!---------------------------------------------------------->
 
 <details>
-<summary>*1. Cadre du projet*</summary>
+<summary>1. Cadre du projet</summary>
 
 - Réalisé par des étudiants durant le deuxième quadrimestre.
 - Travail en classe (séances présentielles) et à domicile.
@@ -45,7 +45,7 @@ Binôme (B1)
 <!---------------------------------------------------------->
 
 <details>
-<summary>*2. Modes de fonctionnement du robot*</summary>
+<summary>2. Modes de fonctionnement du robot</summary>
 
 - Mode manuel
     - Contrôle à distance via une télécommande.
@@ -73,7 +73,13 @@ Binôme (B1)
 
 
 <details>
-<summary>4. *Sources*</summary>
+<summary>4. Sources</summary>
+
+```
+eeeee
+```
+
+
 
 
 ** **
