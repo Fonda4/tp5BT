@@ -1,68 +1,539 @@
-# A2071 - Robotique (Part 1) - 2024-2025
+<style>
+    .Droite {
+        text-align: right;
+    }
+    .heatMap {
+        width: 100%;
+    }
+    .heatMap th {
+        background: #cfd8dc;
+        word-wrap: break-word;
+        text-align: center;
+    }
+    .heatMap tr {
+        vertical-align: top;
+    }
+    .heatMap tr:nth-child(1) {  background: #e1f5fe ; }
+    .heatMap tr:nth-child(2) { background: #b3e5fc ; }
+    .heatMap tr:nth-child(3) { background: #e1f5fe ; }
+    .heatMap tr:nth-child(4) { background: #b3e5fc ; }
+    .heatMap tr:nth-child(5) { background: #e1f5fe ; }
+    .heatMap tr:nth-child(6) { background: #b3e5fc ; }
+	.heatMap tr:nth-child(7) { background: #e1f5fe ; }
+    .heatMap tr:nth-child(8) { background: #b3e5fc ; }
+    .heatMap tr:nth-child(9) { background: #e1f5fe ; }
+    .heatMap tr:nth-child(10) { background: #b3e5fc ; }
+    .heatMap tr:nth-child(11) { background: #e1f5fe ; }
+    .heatMap tr:nth-child(12) { background: #b3e5fc ; }
+
+    .ex1 {
+    margin: auto;
+    background: gold;
+    width: 66%;
+    }
+    .ex2 {
+            margin: 0px 0px 0px 20px;
+    }
+
+    details {  
+        border:5px solid #ffffff;
+        background: #ffffff;
+        color: #000000;
+    }
+
+    summary {
+        font-size: 24px;
+        font-weight: bold;
+    
+    }
+
+    .sum1 {
+        font-size: 20px;
+        font-weight: bold;
+    }    
+
+    .sum2 {
+        font-size: 16px;
+        font-weight: normal;
+    
+    }
+</style> 
 
 
-## *Projet: Mini Robot Télécommandé*
 
-Binôme (B1)
-- Xu Keng HE305064
-- Fondimare Nathan HE304827
-- de Meeus Justin HE304831
-- Foyet Fondjo David HE305102
 
-### Objectifs:
-<!---0------------------------------------------------------>
+<!--- PRESENTATION------------------------------------------>
 <!---------------------------------------------------------->
 
-<details>
-<summary>0. Objectif du projet</summary>
+<details open>
+<summary>0. Présentation</summary>
 
-- Concevoir, construire et programmer un robot mobile radiocommandé.
-- Le robot devra effectuer des mouvements, éviter des obstacles et exécuter des tâches simples.
+Pour répondre à différents besoins liés à ORBIS et toutes les données enregsitrées dans sa DB,
+nous avons conçu une DB de Diagnostic.
+Elle contient différentes ... tables, procédures stockées et fonctions .. rangées dans plusieurs schémas.
 
+Pour accéder à la DB d'ORBIS, une procdure permet de disposer de synonymes ayant les mêmes noms que les tables d'ORBIS ... les données sont accessibles comme si nous étions dans la DB d'ORBIS.
+ 
+
+
+<details open >
+<summary class="sum2">DB_DIAG contient les schémas suivants :</summary>
+
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|_Backup||
+|_Data||
+|_Extract||
+|_Genkey||
+|_HistoConfig||
+|_ORBIS||
+|_Root||
+|_Schema||
+|_TComp||
+|_WebAPI||
+|Docu||
+</div>
+</details>
+
+<!--- ROOT------------------------------------------>
+<details  open class="ex2" >
+<summary  class="sum1"><i>Root</i></summary>
+<details open class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|Backup_files||
+|Configuration||
+|Event||
+|EventLog||
+|TBL_COLUMNS||
+</div>
+</details>
+<details open class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|sp_CreateCsvFileFromQuery||
+|sp_CreateDirectory||
+|sp_DeleteFile||
+|sp_ExtractRoutines||
+|sp_ReadFile||
+|sp_ReadFileU||
+|sp_SaveBlob||
+|sp_SaveFile||
+|sp_SaveFileU||
+|sp_ShowJson||
+|sp_ShowJson_UTF8||
+|...||
+
+</div>
+</details>
+<details open class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|fn_ConversionChaineEtendue||
+|fn_ConversionChaineHTML||
+|fn_ConvertBase64ToBin||
+|fn_ConvertBinToBase64||
+|fn_HashCode||
+|fn_UTF8ToNvarchar||
+|fn_NVARCHARtoUTF8||
+|LPAD||
+|RPAD||
+|...||
+
+</div>
+</details>
+
+</details>
+<!--- FIN ROOT------------------------------------------>
+
+
+<!--- CONN------------------------------------------>
+<details open class="ex2" >
+<summary  class="sum1"><i>Conn</i></summary>
+
+<details open class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|sp_StatDbOrbis <br>[src](./Deploy/conn/sp_StatDbOrbis.sql)|Cette procédure permet de rechercher toutes les DB ORBIS <br>présentent sur le serveur SQL|
+|sp_CreateSynonymsForTargetDatabase <br>[src](./Deploy/conn/CreateSynonymsForTargetDatabase.sql)|Cette procédure permet de se connecter à une DB ORBIS<br>**Parametre 1 : @databaseName** Nom de la DB ORBIS|
+
+
+</div>
+</details>
+
+<details open class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Table|Colonne|Type|
+|:--|:--|:--|
+|STAT_DB_ORBIS<br>[src](./Deploy/conn/TB_STAT_DB_ORBIS.sql)|Nom<br>DateCreation<br>ConfigFileVersion<br>DbRevision<br>LastSchemaUpdate<br>LastEvent|varchar(100)<br>datetime<br>varchar(100)<br>varchar(100)<br>datetime<br>datetime|
+
+</div>
+</details>
+
+</details>
+ <!--- FIN CONN------------------------------------------>
+
+
+<!--- ORBIS------------------------------------------>
+<details open class="ex2" >
+<summary  class="sum1"><i>ORBIS</i></summary>
+
+<details open class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|DICO_OPERATION||
+|Tempo_BIO||
+|Tempo_HTML||
+</div>
+</details>
+<details open class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|sp_CreationVueAlphas||
+|sp_CreationVueFace||
+|...||
+
+</div>
+</details>
+
+</details>
+ <!--- FIN ORBIS------------------------------------------>
+
+
+<!--- BACKUP------------------------------------------>
+<details open class="ex2" >
+<summary  class="sum1"><i>BACKUP</i></summary>
+
+<details open class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|BACKUP_FILES||
+
+</div>
+</details>
+<details open class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|sp_Backup||
+|sp_PurgeAllBackupFiles||
+|sp_PurgeBackupFiles||
+|sp_Restore||
+
+
+</div>
+</details>
+<details open class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+</details>
+ <!--- FIN BACKUP------------------------------------------>
+
+
+
+<!--- HTTP------------------------------------------>
+<details open class="ex2" >
+<summary  class="sum1"><i>HTTP</i></summary>
+
+
+<details open class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|sp_ExecuteHTTPAuthExt <br>[src](./Deploy/http/EXECUTE_HTTP_AuthExt.sql)|Cette procédure pemet de soumettre une requête HTPP<br> et d'obtenir une réponse Texte <br>**parametre 1 : @URL**  <br>**parametre 2 : @UserName**  <br>**parametre 3 : @Password**  <br>**parametre 4 :	@Type**  <br>**parametre 5 : @iFormat**  <br>**parametre 6 : @Param**  <br>**parametre 7 : @Body**  <br>**parametre 8 : @Status**  <br>**parametre 9 : @StatusText**  <br>**parametre 10 : @Response**|
+|sp_ExecuteHTTPAuthExt_Bin <br>[src](./Deploy/http/EXECUTE_HTTP_AuthExt_Bin.sql)|Cette procédure pemet de soumettre une requête HTPP<br> et d'obtenir une réponse Binaire <br>**parametre 1 : @URL**  <br>**parametre 2 : @UserName**  <br>**parametre 3 : @Password**  <br>**parametre 4 :	@Type**  <br>**parametre 5 : @iFormat**  <br>**parametre 6 : @Param**  <br>**parametre 7 : @Body**  <br>**parametre 8 : @Status**  <br>**parametre 9 : @StatusText**  <br>**parametre 10 : @Response**|
+|||
+
+</div>
+</details>
+
+<details open class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Table|Colonne|Type|
+|:--|:--|:--|
+|Execution <br> [src](./Deploy/http/TB_Execution.sql)|IdAuto<br>DateExecution<br>EndPoint<br>Username<br>Password<br>TypeRequest<br>ApplicationType<br>Param<br>Body<br>Status<br>StatusText<br>Response<br>IdAutoPrecedent<br>Redo_Status<br>Redo_Reponse|int identity (1,1)<br>datetime default getdate()<br>varchar(1000)<br>varchar(1000)<br>varchar(1000)<br>varchar(10)<br>varchar(100)<br>varchar(MAX)<br>varchar(MAX)<br>varchar(32)<br>varchar(32)<br>varchar(MAX)<br>int<br>int<br>int|
+
+</div>
+</details>
+
+
+
+</details>
+ <!--- FIN HTTP------------------------------------------>
+
+
+
+<!--- WEBAPI------------------------------------------>
+<details open class="ex2" >
+<summary  class="sum1"><i>WEBAPI</i></summary>
+
+<details open class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|WebAPI||
+|.||
+|.||
+|.||
+|.||
+|.||
+
+</div>
+</details>
+<details open class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+<details open class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+</details>
+ <!--- FIN WEBAPI------------------------------------------>
+
+
+
+<!--- HistoConfig------------------------------------------>
+<details open class="ex2" >
+<summary  class="sum1"><i>HistoConfig</i></summary>
+
+<details open class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+<details open class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+<details open class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+</details>
+ <!--- FIN HistoConfig------------------------------------------>
+
+<!--- AUTRES------------------------------------------>
+<details open class="ex2" >
+<summary  class="sum1"><i>AUTRES</i></summary>
+
+<details open class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+<div class="heatMap">  
+    
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+<details open class="ex2" >
+<summary class="sum2"><i>Procédures</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+<details open class="ex2" >
+<summary class="sum2"><i>Fonctions</i></summary>
+<div class="heatMap">
+
+|Nom|Description|
+|:--|:--|
+|...||
+
+</div>
+</details>
+</details>
+ <!--- FIN AUTRES------------------------------------------>
 
 </details>
 
 
-<!--------------1------------------------------------------->
+<!--- DEPLOIEMENT------------------------------------------->
 <!---------------------------------------------------------->
 
-<details>
-<summary>1. Cadre du projet</summary>
+<details open >
+<summary>1. Deploiement</summary>
 
-- Réalisé par des étudiants durant le deuxième quadrimestre.
-- Travail en classe (séances présentielles) et à domicile.
-- Acquisition de compétences en :
-  - Conception mécanique
-  - Électronique
-  - Programmation
-  - Automatisation
+Le déploiement s'effectue à l'aide de 3 fichiers SQL.  
+<div class="heatMap">
+
+|Description|Sript sql|
+|--|--|
+|Création de la DB et des schémas|[Deploy\Create_DB_DIAG.sql](./Deploy/Create_DB_DIAG.sql)|
+|Procédures de base|[Deploy\Deploy.sql](./Deploy/Deploy.sql)|
+|Procédures complétmentaires|[Deploy\Deploy_supp.sql](./Deploy/Deploy_supp.sql)|
+</div>
+Chacun des fichiers doit être ouvert dans SSMS, puis Executé.  
+
+****  
+
+**Deploy.sql** 
+
+il faut personnaliser  : 	**@ROOT**
+
+**Deploy_supp.sql**
+
+il faut personnaliser  : **@DB_ORBIS**
+
+** **
 
 </details>
 
 
-<!---2------------------------------------------------------>
+<!--- UTILISATION------------------------------------------->
 <!---------------------------------------------------------->
 
-<details>
-<summary>2. Modes de fonctionnement du robot</summary>
+<details open >
+<summary>2. Utilisation</summary>
 
-- Mode manuel
-    - Contrôle à distance via une télécommande.
 
-- Mode autonome
-    - Détection et évitement des obstacles grâce à des capteurs embarqués.
-    - Mise en œuvre d’algorithmes d’évitement intelligents.
+ <!--- Root------------------------------------------>
+<details open  class="ex2" >
+<summary  class="sum1"><i>Root</i></summary>
+
+</details>
+ <!--- FIN Root------------------------------------------>
+
+
+<!--- Conn------------------------------------------>
+<details open  class="ex2" >
+<summary  class="sum1"><i>Conn</i></summary>
+
+
+<details open class="ex2" >
+<summary class="sum2"><i>sp_StatDbOrbis</i></summary>
+
+[source](./Use/conn/Use%20sp_StatDbOrbis.sql)
+
+</details>
+
+<details open class="ex2" >
+<summary class="sum2"><i>sp_CreateSynonymsForTargetDatabase</i></summary>
+
+[source](./Use/conn/CreateSynonymsForTargetDatabase.sql)
+
+</details>
+
+</details>
+ <!--- FIN Conn------------------------------------------>
+
+
+ <!--- Http------------------------------------------>
+<details open  class="ex2" >
+<summary  class="sum1"><i>Http</i></summary>
+
+
+<details open class="ex2" >
+<summary class="sum2"><i>MinimalAPI
+</i></summary>
+
+[source](./Use/http/WebApi_MinimalAPI.sql)
+
+</details>
+
+</details>
+ <!--- FIN Http------------------------------------------>
+
+
+<!--- AUTRES------------------------------------------>
+<details open  class="ex2" >
+<summary  class="sum1"><i>AUTRES</i></summary>
+
+<details open class="ex2" >
+<summary class="sum2"><i>Tables</i></summary>
+
+</details>
+
+</details>
+ <!--- FIN AUTRES------------------------------------------>
+
 </details>
 
 <!--- TESTS------------------------------------------------->
 <!---------------------------------------------------------->
 
-<details>
-<summary>3. Finalité pédagogique</summary>
+<details open >
+<summary>3. Test</summary>
 
-- Exploration des principes de télécommande et d’automatisation.
-- Compréhension approfondie des concepts de robotique et d’intelligence embarquée.
-- Définition des spécifications et fonctionnalités en fonction des deux modes de fonctionnement.
+*vvfrgev*
+
+
+
+** **
 
 </details>
 
@@ -71,155 +542,17 @@ Binôme (B1)
 <!---------------------------------------------------------->
 
 
-<details>
-<summary>4. Sources</summary>
+<details open >
+<summary>4. Controles</summary>
 
 
-SparkFun Electronics. HC-SR04 Ultrasonic Sensor Datasheet. Auteur inconnu. [PDF en ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf
-```
-Wikipédia. Ultrason. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://fr.wikipedia.org/wiki/Ultrason
-```
-Ducros, Christian. Les 3 raisons de la programmation asynchrone. [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.youtube.com/watch?v=GzPktikU_PI
-```
-Ducros, Christian. Programmation asynchrone partie 1/4 module uasyncio. [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.youtube.com/watch?v=xe_OZ6WnSY4
-```
-Ducros, Christian. Programmation asynchrone partie 2/4 module uasyncio. [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.youtube.com/watch?v=xe_OZ6WnSY4
-```
-
-Ducros, Christian. Programmation asynchrone partie 3/4 module uasyncio. [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.youtube.com/watch?v=UptaQVDQeRg
-```
-
-Ducros, Christian. Programmation asynchrone partie 4/4 module uasyncio. [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.youtube.com/watch?v=DCvGdwg1Iiw
-```
-
-christianDUCROS. GitHub - christianDUCROS/uasyncio : exemples. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://github.com/christianDUCROS/uasyncio
-```
-
-Instructables Workshop. Understanding the basics of electricity. [PDF en ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://content.instructables.com/F8O/SMME/IU5NM2JJ/F8OSMMEIU5NM2JJ.pdf
-```
-
-Compuphase. Termite. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.compuphase.com/software_termite.htm
-```
-SourceForge. Y-A Terminal. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://sourceforge.net/projects/y-a-terminal/
-```
-
-MicroPython Development Team. _thread — Multi-threading support. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://docs.micropython.org/en/latest/library/_thread.html
-```
-
-MicroPython Development Team. asyncio — Asynchronous I/O support. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://docs.micropython.org/en/latest/library/asyncio.html
-```
-
-ElectroSoftCloud. Script multithreadé sur Raspberry Pi Pico et MicroPython. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.electrosoftcloud.com/en/multithreaded-script-on-raspberry-pi-pico-and-micropython/
-```
-
-DigiKey. (2021, 9 août). How to Use Asyncio in MicroPython (Raspberry Pi Pico) [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.youtube.com/watch?v=5VLvmA__2v0
-```
-
-MicroPython. (2023, 3 juin). MicroPython Meetup May 2023. ASYNCIO Profiler demonstration [Vidéo en ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.youtube.com/watch?v=qQ-t11hHWXQ
-```
-
-class Pin – control I/O pins — MicroPython latest documentation. (s. d.). [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://docs.micropython.org/en/latest/library/machine.Pin.html#machine-pin
-```
-
-class Timer – control hardware timers — MicroPython latest documentation. (s. d.). [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://docs.micropython.org/en/latest/library/machine.Timer.html
-```
-
-Quick reference for the RP2 — MicroPython latest documentation. (s. d.). [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://docs.micropython.org/en/latest/rp2/quickref.html#pwm-pulse-width-modulation
-```
-
-Peppe8o. ssd1306.py. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://peppe8o.com/download/micropython/ssd1306/ssd1306.py
-```
-
-Santos, S., & Santos, S. (2023, 5 juillet). MicroPython : OLED Display with ESP32 and ESP8266 | Random Nerd Tutorials. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://randomnerdtutorials.com/micropython-oled-display-esp32-esp8266/
-```
-Das, A. (2024, 24 mai). Raspberry Pi Pico Interrupts Tutorial- Examples in MicroPython. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://electrocredible.com/raspberry-pi-pico-external-interrupts-button-microp ython/
-```
-
-Voici vos références reformatées de façon plus lisible :
-Moteurs électriques pour la robotique. (2025, 6 janvier). [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.dunod.com/sciences-techniques/moteurs-electriques-pour-robotique-0
-```
-Texas Instruments. (s.d.). L293. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.ti.com/lit/ds/symlink/l293.pdf
-```
-Pont-H L293D — MCHobby - Wiki. (s.d.). [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://wiki.mchobby.be/index.php?title=Pont-H_L293D
-```
-STMicroelectronics. (s.d.). L298. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://www.mouser.be/datasheet/2/389/l298-1849437.pdf
-```
-Pont-H L298N — MCHobby - Wiki. (s.d.). [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://wiki.mchobby.be/index.php?title=Pont-H_L298N
-```
-Eskimon. (s.d.). Un moteur qui a de la tête : le Servomoteur - Arduino : premiers pas en informatique embarquée. [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://zestedesavoir.com/tutoriels/686/arduino-premiers-pas-en-informatique-embarquee/747_le-mouvement-grace-aux-moteurs/3438_un-moteur-qui-a-de-la-tete-le-servomoteur/
-```
-PICO Servo Driver - MakerFabs Wiki. (s.d.). [En ligne]. Disponible sur : (consulté le 6 janvier 2025).
-```
-https://wiki.makerfabs.com/PICO_Servo_Driver.html
-```
-
-
-
-
-
-
+** **
 
 </details>
 
 <!---------------------------------------------------------->
 
 
-** **
+
 
 
