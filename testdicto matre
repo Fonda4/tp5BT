@@ -1,0 +1,20 @@
+import ujson  # pour convertir dictionnaire en chaîne JSON
+from machine import UART, Pin
+import time
+
+# Initialiser l'UART (ici UART0, broches TX=Pin0, RX=Pin1)
+uart = UART(0, baudrate=9600, tx=Pin(0), rx=Pin(1))
+
+# Exemple de dictionnaire
+data = { "type": "moteur", "valeur": 20 }
+
+while True:
+    # Convertir le dictionnaire en chaîne JSON
+    json_str = ujson.dumps(data)
+    
+    # Envoyer la chaîne encodée en bytes avec un délimiteur (\n par exemple)
+    uart.write(json_str + "\n")
+    
+    print("Envoyé :", json_str)
+    
+    time.sleep(1)  # Pause d'1 seconde avant de renvoyer
